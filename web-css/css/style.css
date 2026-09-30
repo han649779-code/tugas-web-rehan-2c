@@ -1,99 +1,136 @@
-/*memberikan style pada semua*/
+/* memberikan style pada semua */
 body {
-    font: 16px arial, sans-serif;
+    font: 16px Arial, sans-serif;
     background-color: lightgray;
+    margin: 0;
+    padding: 0;
 }
- 
-/*membuat canvas putih ditengah*/
+
+
+/* membuat canvas putih di tengah */
 .container {
     width: 800px;
     margin: auto;
     background-color: white;
 }
- 
-/*mengatur jarak dalam header*/
+
+
+/* mengatur jarak dalam header */
 .header {
     padding-top: 20px;
     padding-right: 20px;
     padding-left: 20px;
 }
- 
-/*specify css elemen*/
+
+
+/* specify css elemen */
 .header .judul {
     font-size: 40px;
     font-weight: bold;
     margin-bottom: 5px;
 }
-/*mengatur display inline-block agar bisa diberikan dimensi*/
+
+
+/* mengatur display inline-block agar bisa diberikan dimensi */
 .nav {
     padding: 0px;
+    margin-bottom: 20px;
 }
- 
+
+
+/* agar menjadi ke samping tidak ke bawah */
 .nav li {
-    /*agar menjadi kesamping tidak kebawah*/
     display: inline-block;
     margin-right: 10px;
     margin-top: 20px;
 }
-/*menghilangkan garis bawah link*/
+
+
+/* menghilangkan garis bawah link */
 .nav li a {
     text-decoration: none;
     color: navy;
 }
- 
-/*ketika navigasi disorot mouse*/
+
+
+/* ketika navigasi disorot mouse */
 .nav li a:hover {
     background-color: lightblue;
     color: white;
 }
 
-     /*untuk css banner*/
+
+/* =========================
+   BANNER / FOTO PROFIL
+   ========================= */
+
 .banner {
-    height: 300px;
-    /*background-color: skyblue;*/
-    /*berikan file gambar*/
-    background-image: url(img/banner.jpg);
-    /*atur ukuran gambar*/
+    height: 500px;
+
+    /* Foto dari ImgBB */
+    background-image: url("https://i.ibb.co.com/1YZNq3yh/Whats-App-Image-2026-09-24-at-15-24-26.jpg");
+
+    /* Ukuran gambar */
     background-size: cover;
-    /*mengatur posisi gambar horisontal dan vertikal*/
-    background-position: 0px -150px;
-    /*mengatur garis tepi tebal jenis warna*/
+
+    /* Posisi foto */
+    background-position: center top;
+
+    /* Agar gambar tidak berulang */
+    background-repeat: no-repeat;
+
+    /* Garis tepi */
     border-top: 5px solid navy;
     border-bottom: 5px solid skyblue;
 }
-/*untuk isi*/
+
+
+/* =========================
+   UNTUK ISI
+   ========================= */
+
 .isi {
     padding: 20px;
 }
- 
+
+
 .isi h2 {
     font-size: 30px;
     font-weight: bold;
 }
- 
+
+
 .isi .penulis {
     font-size: 14px;
-    /*agar agak naik*/
+
+    /* agar agak naik */
     margin-top: -10px;
 }
- 
+
+
 .isi .penulis a {
     text-decoration: none;
     color: skyblue;
 }
- 
+
+
 .isi p {
     font-size: 16px;
     margin-bottom: 10px;
 }
 
-/*untuk footer*/
+
+/* =========================
+   UNTUK FOOTER
+   ========================= */
+
 .footer {
     background-color: navy;
     height: 50px;
     padding: 2px;
 }
- 
+
+
 .footer .copyright {
     font-size: 16px;
     color: white;
