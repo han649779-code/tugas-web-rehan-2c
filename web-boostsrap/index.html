@@ -1,76 +1,342 @@
 <!DOCTYPE html>
-
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Selamat Datang di Website Saya</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REHAN RAMADANI — Portofolio Drag Bike</title>
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+          colors: {
+            cream: '#f4f3ef',
+            darkbg: '#121212',
+            carddark: '#1e1e1e',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Animasi Kedip Kursor Mengetik */
+    .typing-cursor::after {
+      content: '|';
+      animation: blink 0.7s infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* Animasi Teks Marquee Berjalan Kesamping */
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .animate-marquee {
+      display: flex;
+      width: 200%;
+      animation: marquee 22s linear infinite;
+    }
+
+    .animate-marquee:hover {
+      animation-play-state: paused; /* Berhenti saat disorot kursor */
+    }
+  </style>
 </head>
+<body class="bg-cream text-gray-900 font-sans antialiased selection:bg-gray-900 selection:text-white">
 
-<body class="bg-gray-100 font-sans min-h-screen flex flex-col">
+  <!-- Floating Centered Navbar -->
+  <header class="fixed top-5 inset-x-0 z-50 flex justify-center px-4">
+    <nav class="bg-white/80 backdrop-blur-md border border-gray-200/80 rounded-full px-6 py-2.5 flex items-center gap-8 shadow-sm text-xs font-medium tracking-wide uppercase">
+      <a href="#home" class="flex items-center gap-2 font-bold tracking-wider text-gray-900">
+        <span class="w-2 h-2 rounded-full bg-black"></span> REHAN
+      </a>
+      <div class="hidden sm:flex items-center gap-6 text-gray-600">
+        <a href="#about" class="hover:text-black transition">Tentang</a>
+        <a href="#gallery" class="hover:text-black transition">Galeri Motor Drag</a>
+        <a href="#videos" class="hover:text-black transition">Video Drag</a>
+        <a href="#article" class="hover:text-black transition">Artikel Drag</a>
+      </div>
+      <a href="#contact" class="bg-black text-white px-4 py-1.5 rounded-full hover:bg-gray-800 transition">Kontak</a>
+    </nav>
+  </header>
 
-  <!-- Header / Navbar -->
+  <!-- HERO SECTION -->
+  <section id="home" class="min-h-screen pt-32 pb-16 px-6 md:px-12 max-w-7xl mx-auto flex flex-col justify-between">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center my-auto">
+      
+      <div class="lg:col-span-7 space-y-6">
+        <p class="text-xs font-semibold uppercase tracking-widest text-gray-500">Portofolio Pribadi</p>
+        
+        <h1 class="text-5xl md:text-7xl font-serif font-normal leading-tight">
+          Halo, Saya <br>
+          <span class="font-semibold italic">REHAN RAMADANI.</span>
+        </h1>
 
-  <nav class="bg-green-600 text-white p-4">
-    <div class="container mx-auto flex items-center justify-between">
+        <div class="text-xl md:text-2xl text-gray-600 font-serif h-8 flex items-center">
+          <span id="typing-text" class="typing-cursor text-gray-900 font-sans font-medium"></span>
+        </div>
 
-```
-  <h1 class="text-xl font-bold">
-    Selamat Datang di Website Saya
-  </h1>
+        <div class="pt-4 flex flex-wrap gap-4 items-center">
+          <a href="#gallery" class="bg-black text-white text-xs uppercase tracking-wider px-6 py-3 rounded-full hover:bg-gray-800 transition">
+            Lihat Galeri Drag Bike
+          </a>
+          <a href="#contact" class="border border-gray-400 text-xs uppercase tracking-wider px-6 py-3 rounded-full hover:border-black transition">
+            Hubungi Saya
+          </a>
+        </div>
+      </div>
 
-  <div class="flex gap-6">
-    <a href="#" class="hover:underline">Home</a>
-    <a href="#" class="hover:underline">Product</a>
-    <a href="#" class="hover:underline">Service</a>
-    <a href="#" class="hover:underline">Contact</a>
-    <a href="#" class="hover:underline">About</a>
-  </div>
+      <!-- Kartu Foto Utama -->
+      <div class="lg:col-span-5 flex justify-center">
+        <div class="relative w-full max-w-md bg-white p-3 rounded-2xl shadow-xl border border-gray-200/60 transform hover:-translate-y-2 transition duration-500">
+          <div class="overflow-hidden rounded-xl aspect-[4/3]">
+            <img src="img/WhatsApp Image 2026-09-25 at 10.53.02.jpeg" alt="Motor Drag Custom Rehan" class="w-full h-full object-cover hover:scale-105 transition duration-700">
+          </div>
+          <div class="p-4 flex items-center justify-between text-xs text-gray-500">
+            <span>Rangka Trondol Drag Lurus</span>
+            <span class="font-medium text-black">Rehan Ramadani</span>
+          </div>
+        </div>
+      </div>
 
-</div>
-```
+    </div>
+  </section>
 
-  </nav>
+  <!-- GALERI FOTO MOTOR DRAG BALAP LURUS -->
+  <section id="gallery" class="py-16 bg-white border-y border-gray-200 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 mb-8">
+      <p class="text-xs font-semibold uppercase tracking-widest text-gray-400">Showcase Drag Bike</p>
+      <h2 class="text-3xl font-serif mt-1">Galeri Motor Drag Lurus 201m / 402m</h2>
+    </div>
 
-  <!-- Main Content -->
+    <!-- Track Berjalan Otomatis -->
+    <div class="relative w-full overflow-hidden py-4">
+      <div class="animate-marquee gap-6 px-4">
+        
+        <!-- Foto 1 -->
+        <div class="w-80 md:w-96 flex-none bg-cream p-3 rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-md transition">
+          <img src="img/foto1.jpeg" class="w-full h-56 object-cover rounded-xl" alt="Motor Drag Trondol">
+          <p class="text-xs text-gray-700 mt-3 font-semibold text-center">Rangka Trondol & Stang Jepit Drag</p>
+        </div>
 
-  <main class="flex-1">
+        <!-- Foto 2 -->
+        <div class="w-80 md:w-96 flex-none bg-cream p-3 rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-md transition">
+          <img src="img/foto2.jpeg" class="w-full h-56 object-cover rounded-xl" alt="Matik Drag Beat">
+          <p class="text-xs text-gray-700 mt-3 font-semibold text-center">Pesona 5TP Drag 200cc</p>
+        </div>
 
-```
-<!-- Hero Image -->
-<div class="container mx-auto text-center my-6">
-  <img src="img/fahmi.jpg" class="mx-auto rounded shadow-lg max-w-full">
-</div>
+        <!-- Foto 3 -->
+        <div class="w-80 md:w-96 flex-none bg-cream p-3 rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-md transition">
+          <img src="img/foto3.jpeg" class="w-full h-56 object-cover rounded-xl" alt="Ninja Drag Lurus">
+          <p class="text-xs text-gray-700 mt-3 font-semibold text-center">Motor Balap Lurus 2-Tak</p>
+        </div>
 
-<!-- Artikel -->
-<div class="container mx-auto bg-white p-6 rounded shadow-md">
-  <h2 class="text-2xl font-semibold mb-2">
-    Judul Artikel
-  </h2>
+        <!-- Foto 4 -->
+        <div class="w-80 md:w-96 flex-none bg-cream p-3 rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-md transition">
+          <img src="img/foto4.jpeg" class="w-full h-56 object-cover rounded-xl" alt="Joki Drag Bike 201m">
+          <p class="text-xs text-gray-700 mt-3 font-semibold text-center">Sirkuit Lurus 201 Meter Siap</p>
+        </div>
 
-  <p class="text-gray-500 text-sm mb-4">
-    Oleh — REHAN RAMADANI
-  </p>
+        <!-- DUPLIKASI GAMBAR UNTUK ANIMASI KONTINU -->
+        <div class="w-80 md:w-96 flex-none bg-cream p-3 rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-md transition">
+          <img src="img/foto1.jpeg" class="w-full h-56 object-cover rounded-xl" alt="Motor Drag Trondol">
+          <p class="text-xs text-gray-700 mt-3 font-semibold text-center">Rangka Trondol & Stang Jepit Drag</p>
+        </div>
 
-  <p class="mb-2">
-   Motor drag (sering diucap drak) seperti pada gambar adalah sepeda motor yang dimodifikasi khusus untuk ajang balap lurus jarak pendek (umumnya lintasan 201 meter atau 402 meter) dengan fokus utama mengejar akselerasi dan kecepatan tinggi dalam waktu sesingkat-singkatnya.  
-Berikut adalah karakteristik utama yang mendefinisikan motor drag:
-Bobot Sanga Minimalis (Trondol): Seluruh bodi non-esensial, spakbor, hingga tangki bawaan dilepas untuk mengurangi beban kendaraan semaksimal mungkin.  
-Mesin Hasil Kustomisasi: Sektor mesin sudah mengalami perombakan besar (bore up, stroke up, perbaikan sistem pengapian, dan karburator/injeksi kustom) agar menghasilkan tenaga jauh di atas standar pabrik.  
-Ergonomi Merunduk: Menggunakan stang jepit rendah dan footstep underbone yang memaksa posisi joki merunduk sejajar dengan rangka untuk memperkecil hambatan angin (aerodinamis).  
-Kaki-kaki Ringan: Menggunakan pelek jari-jari berdiameter tipis dan ban khusus (ban cacing) untuk meminimalisasi gesekan roda dengan permukaan aspal saat meluncur.
-  </p>
-</div>
-```
+        <div class="w-80 md:w-96 flex-none bg-cream p-3 rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-md transition">
+          <img src="img/foto2.jpeg" class="w-full h-56 object-cover rounded-xl" alt="Matik Drag Beat">
+          <p class="text-xs text-gray-700 mt-3 font-semibold text-center">Pesona 5TP Drag 200cc</p>
+        </div>
 
-  </main>
+      </div>
+    </div>
+  </section>
 
-  <!-- Footer -->
+  <!-- SEKSI VIDEO PLAYER DRAG BIKE -->
+  <section id="videos" class="py-20 bg-darkbg text-white border-b border-gray-800">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="mb-10 text-center sm:text-left">
+        <p class="text-xs font-semibold uppercase tracking-widest text-gray-400">Aksi Video</p>
+        <h2 class="text-3xl md:text-4xl font-serif mt-1">Video Balap & Setting Motor Drag</h2>
+      </div>
 
-  <footer class="bg-gray-800 text-white text-center py-4 mt-6">
-    Created with ♥ REHAN RAMADANI
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Frame Pemutar Utama -->
+        <div class="lg:col-span-8 bg-carddark p-3 rounded-3xl border border-gray-800 shadow-2xl">
+          <div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-black">
+            <video id="mainVideo" controls class="w-full h-full object-cover" src="video/video1.mp4">
+              Browser Anda tidak mendukung pemutar video HTML5.
+            </video>
+          </div>
+          <div class="p-4">
+            <h3 id="videoTitle" class="text-lg font-semibold">Raungan Drag 200cc</h3>
+            <p id="videoDesc" class="text-xs text-gray-400 mt-1">Aksi setting mesin motor drag di lintasan lurus 201 meter.</p>
+          </div>
+        </div>
+
+        <!-- Daftar Pilihan Video -->
+        <div class="lg:col-span-4 space-y-4">
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Pilih Video:</p>
+
+          <!-- Video 1 -->
+          <button onclick="playVideo('video/video2.mp4', 'Setting & Raungan Drag 200cc', 'Aksi setting mesin dan gasspoll motor drag di lintasan lurus 201 meter.')" 
+                  class="w-full text-left bg-carddark p-3 rounded-2xl border border-gray-800 hover:border-white transition flex items-center gap-4 group cursor-pointer">
+            <div class="w-20 h-14 bg-black rounded-lg overflow-hidden flex-none relative flex items-center justify-center">
+              <span class="text-xs font-bold text-gray-400 group-hover:text-white">▶ 1</span>
+            </div>
+            <div>
+              <h4 class="text-xs font-semibold text-gray-200 group-hover:text-white">Setting & Tes Sound Motor Drag Lurus</h4>
+              <p class="text-[10px] text-gray-400 mt-0.5">Drag Bike 201m</p>
+            </div>
+          </button>
+
+          <!-- Video 2 -->
+          <button onclick="playVideo('video/video1.mp4', 'Setting & Tes Sound Motor Drag Lurus', 'Aksi balap lurus matik drag kustom tune-up.')" 
+                  class="w-full text-left bg-carddark p-3 rounded-2xl border border-gray-800 hover:border-white transition flex items-center gap-4 group cursor-pointer">
+            <div class="w-20 h-14 bg-black rounded-lg overflow-hidden flex-none relative flex items-center justify-center">
+              <span class="text-xs font-bold text-gray-400 group-hover:text-white">▶ 2</span>
+            </div>
+            <div>
+              <h4 class="text-xs font-semibold text-gray-200 group-hover:text-white">Sound & Setting</h4>
+              <p class="text-[10px] text-gray-400 mt-0.5">Aksi Balap Lurus</p>
+            </div>
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ARTIKEL MOTOR DRAG LURUS -->
+  <section id="article" class="py-24 max-w-6xl mx-auto px-6">
+    <div class="mb-12">
+      <p class="text-xs font-semibold uppercase tracking-widest text-gray-400">Artikel Utama</p>
+      <h2 class="text-4xl font-serif mt-2">Mengenal Motor Drag Balap Lurus</h2>
+    </div>
+
+    <div class="bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition duration-500 grid grid-cols-1 lg:grid-cols-12 gap-8 p-8 md:p-12 items-center">
+      
+      <div class="lg:col-span-6 overflow-hidden rounded-2xl shadow-md group">
+        <img src="img/WhatsApp Image 2026-09-25 at 10.53.02.jpeg" alt="Motor Drag Lurus" class="w-full h-80 object-cover group-hover:scale-105 transition duration-700">
+      </div>
+
+      <div class="lg:col-span-6 space-y-4">
+        <div class="flex items-center justify-between text-xs text-gray-500">
+          <span class="font-semibold text-black uppercase tracking-wider">Otomotif & Teknik Drag</span>
+          <span>Oleh — REHAN RAMADANI</span>
+        </div>
+
+        <h3 class="text-2xl md:text-3xl font-serif font-semibold">
+          Analisis Modifikasi Motor Drag Lurus
+        </h3>
+
+        <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+          Motor drag balap lurus adalah sepeda motor yang dirancang khusus untuk menguji kecepatan di lintasan lurus berjarak 201 meter atau 402 meter.
+        </p>
+
+        <div class="pt-2 space-y-2 text-xs md:text-sm text-gray-600">
+          <p>• <strong class="text-gray-900">Matik Drag (Beat/Mio):</strong> Menggunakan roller ringan, rasio kustom, dan bore up 200cc.</p>
+          <p>• <strong class="text-gray-900">Bebek & Sport 2-Tak:</strong> Fokus pada karburator besar, membran, serta velg/ban kecil khusus drag.</p>
+          <p>• <strong class="text-gray-900">Rangka Trondol:</strong> Bodi standar dilepas sepenuhnya agar bobot motor menjadi sangat ringan.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="py-24 bg-darkbg text-white text-center">
+    <div class="max-w-3xl mx-auto px-6 space-y-8">
+      <p class="text-xs font-semibold uppercase tracking-widest text-gray-400">Hubungi Saya</p>
+      <h2 class="text-4xl md:text-6xl font-serif">Mari bekerja sama.</h2>
+      <div class="pt-4">
+        <a href="mailto:rehan@example.com" class="inline-block bg-white text-black px-8 py-3 rounded-full text-xs font-semibold uppercase tracking-wider hover:bg-gray-200 transition">
+          Kirim Email
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-gray-500 text-xs py-8 border-t border-gray-900 text-center">
+    <p>© 2026 REHAN RAMADANI. Dibuat dengan Tailwind CSS & JavaScript.</p>
   </footer>
+
+  <!-- Script Animasi Ketik & Pemutar Video -->
+  <script>
+    // Fungsi Pemutar Video
+    function playVideo(file, title, desc) {
+      const player = document.getElementById('mainVideo');
+      
+      player.src = file;
+      document.getElementById('videoTitle').innerText = title;
+      document.getElementById('videoDesc').innerText = desc;
+      
+      player.load();
+      player.play();
+    }
+
+    // Efek Mengetik Otomatis
+    const words = ["Web Developer", "Informatics Student", "Drag Bike Enthusiast"];
+    let i = 0;
+
+    function typingEffect() {
+      let word = words[i].split("");
+      var loopTyping = function() {
+        if (word.length > 0) {
+          document.getElementById('typing-text').innerHTML += word.shift();
+        } else {
+          setTimeout(deletingEffect, 2000);
+          return false;
+        }
+        timer = setTimeout(loopTyping, 100);
+      };
+      loopTyping();
+    }
+
+    function deletingEffect() {
+      let word = words[i].split("");
+      var loopDeleting = function() {
+        if (word.length > 0) {
+          word.pop();
+          document.getElementById('typing-text').innerHTML = word.join("");
+        } else {
+          if (words.length > (i + 1)) {
+            i++;
+          } else {
+            i = 0;
+          }
+          setTimeout(typingEffect, 500);
+          return false;
+        }
+        timer = setTimeout(loopDeleting, 50);
+      };
+      loopDeleting();
+    }
+
+    typingEffect();
+  </script>
 
 </body>
 </html>
