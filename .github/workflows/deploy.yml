@@ -1,18 +1,31 @@
-name: Deploy Web Portofolio 2
+name: Deploy Website to GitHub Pages
 
 on:
   push:
-    branches: [ master ] # Ganti jadi 'main' jika branch utama Anda bernama main
+    branches: ["master"] # Sesuaikan jika branch Anda bernama main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Ganti tulisan di bawah ini sesuai nama folder web Anda (misal: ./web portofolio2)
+          path: './portofolio-web'
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./web portofolio2
+        id: deployment
+        uses: actions/deploy-pages@v4
