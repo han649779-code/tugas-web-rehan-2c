@@ -1,0 +1,126 @@
+/* Styling Utama Halaman */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    padding: 40px 20px;
+}
+
+/* Judul Utama */
+h2 {
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Container Fieldset / Form Input */
+fieldset {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto 25px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+fieldset label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+    color: #495057;
+}
+
+/* Input Text */
+fieldset input[type="text"] {
+    width: calc(100% - 90px);
+    padding: 10px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 6px 0 0 6px;
+    outline: none;
+    font-size: 14px;
+    display: inline-block;
+}
+
+fieldset input[type="text"]:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Tombol Simpan */
+fieldset button {
+    width: 90px;
+    padding: 10px 15px;
+    background-color: #0d6efd;
+    color: white;
+    border: 1px solid #0d6efd;
+    border-radius: 0 6px 6px 0;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    transition: background-color 0.2s;
+}
+
+fieldset button:hover {
+    background-color: #0b5ed7;
+}
+
+/* Daftar Barang (ul) */
+#list-barang {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+/* Item List Barang (li) */
+#list-barang li {
+    background: #ffffff;
+    margin-bottom: 10px;
+    padding: 12px 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    font-size: 16px;
+}
+
+/* Link / Tombol Hapus */
+#list-barang li a {
+    color: #dc3545;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 4px 10px;
+    border: 1px solid #f5c2c7;
+    border-radius: 4px;
+    background-color: #f8d7da;
+    transition: all 0.2s;
+}
+
+#list-barang li a:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Galeri Foto Ilustrasi */
+.gallery-container {
+    max-width: 600px;
+    margin: 40px auto 0 auto;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.gallery-container img {
+    width: 100%;
+    max-width: 280px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
